@@ -1,0 +1,37 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: $principal;
+}
+.page-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    min-height: 100vh;
+    @media (orientation: landscape) {
+        .facebook-ios &, .apple-six & {
+            align-items: flex-start;
+        }
+    }
+}
+.arvo {
+    font-family: 'Arvo', serif;
+}
+.top-bar, .bot-bar {
+    width: 100%;
+    height: 40px;
+    background: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $level9;
+}
+.bot-bar {
+    top: auto;
+    bottom: 0;
+}

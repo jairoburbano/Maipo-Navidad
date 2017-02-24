@@ -1,0 +1,90 @@
+/*------------------------------------*\
+$STEPS
+\*------------------------------------*/
+.step__container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $level6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tutorial & {
+        z-index: $level8;
+    }
+    @include respond-to(tablet) {
+        align-items: flex-start;
+    }
+}
+.steps {
+    display: none;
+    position: relative;
+    color: white;
+    @extend .arvo;
+    text-align: center;
+    max-width: 360px;
+    @include respond-to(tablet) {
+        top: 33%;
+        padding-top: 25px;
+        max-width: 670px;
+    }
+    @include respond-to(desktop) {
+        top: 45%;
+    }
+    @media (orientation: portrait) {
+        display: none !important;
+    }
+    h1 {
+        text-transform: uppercase;
+        @include font-size(18px, 20px);
+        margin-bottom: 10px;
+        @include respond-to(tablet) {
+            margin-bottom: 10px;
+            @include font-size(28px, 30px);
+        }
+    }
+    p {
+        @include font-size(14px, 16px);
+        margin-bottom: 15px;
+        @include respond-to(tablet) {
+            @include font-size(18px, 23px);
+            margin-bottom: 35px;
+        }
+        &.bajada {
+            @include font-size(16px, 19px);
+            margin-bottom: 10px;
+            @include respond-to(tablet) {
+                @include font-size(21px, 25px);
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+.step__welcome {
+    display: block;
+    .btn {
+        margin: auto;
+    }
+}
+.step__portrait {
+    display: none;
+    @media (orientation: portrait) {
+        display: block !important;
+        .apple-five & {
+            padding-top: 60px;
+        }
+    }
+    p {
+        @include font-size(13px, 16px);
+    }
+    svg {
+        width: 68px;
+        height: 73px;
+        fill: white;
+    }
+}
+.step__tutorial {
+    z-index: $level8;
+}

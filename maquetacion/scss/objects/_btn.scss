@@ -1,0 +1,112 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+.btn__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    .btn {
+        margin: 0 5px;
+        @include respond-to(tablet) {
+            margin: 0 10px;
+        }
+    }
+}
+.btn {
+    min-width: 120px;
+    background: #6fa4b0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    color: white;
+    text-align: center;
+    height: 34px;
+    @include font-size(14px, 34px);
+    padding: 0 15px;
+    @include respond-to(tablet) {
+        height: 48px;
+        padding: 0 25px;
+        @include font-size(18px, 48px);
+        min-width: 190px;
+    }
+    &:focus {
+        outline: 0;
+    }
+    .no-touch & {
+        transition: all $time;
+        &:hover {
+            background: darken(#6fa4b0, 15);
+        }
+    }
+}
+.btn--facebook {
+    background: #4f70b0;
+    .no-touch & {
+        &:hover {
+            background: darken(#4f70b0, 15);
+        }
+    }
+}
+.btn--footer {
+    height: 32px;
+    background: #ca1b3c;
+    @include font-size(12px, 32px);
+    @media (orientation: portrait) {
+        .apple-five & {
+            @include font-size(10px, 32px);
+        }
+    }
+    @include respond-to(tablet) {
+        height: 36px;
+        @include font-size(14px, 36px);
+    }
+    .no-touch & {
+        &:hover {
+            background: darken(#ca1b3c, 15);
+        }
+    }
+}
+.btn--load {
+    background-color: transparent;
+    border: 2px solid white;
+    animation: pulse 2s infinite;
+    transition: all $time;
+    @include font-size(14px, 30px);
+    @include respond-to(tablet) {
+        @include font-size(18px, 44px);
+    }
+}
+.next--winners {
+    background: #E0B153;
+    .no-touch & {
+        transition: all $time;
+        &:hover {
+            background: darken(#E0B153, 15%);
+        }
+    }
+}
+.page-init {
+    .next--start, .next--winners {
+        display: none;
+        .pace-done & {
+            display: block;
+        }
+    }
+    .btn--load {
+        display: block;
+        .pace-done & {
+            display: none;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% { opacity: .2; }
+    50% { opacity: 1; }
+    100% { opacity: .2; }
+}
+.btn--go-play {
+    display: inline-block;
+}

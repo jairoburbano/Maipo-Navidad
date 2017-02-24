@@ -1,0 +1,142 @@
+/*------------------------------------*\
+$HEADER
+\*------------------------------------*/
+.test {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 233px;
+    background: red;
+    z-index: 99999;
+    display: none;
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 15.845%;
+    height: 37.5%;
+    transition:top 0.3s;
+    z-index: $level6;
+    @media (max-width: 740px) and (orientation: portrait) {
+        width: 90px;
+        height: 120px;
+    }
+    @include respond-to(tablet) {
+        z-index: $level4;
+        width: 7.032%;
+        height: 18.312%;
+    }
+    @include respond-to(desktop) {
+        
+    }
+    &.logo--big {
+        @include respond-to(tablet) {
+            z-index: $level6;
+            width: 11.042%;
+            height: 28.688%;
+            left: 50%;
+            top: 6%;
+            transform: translate(-50%, 0);
+        }
+        @include respond-to(desktop) {
+            top: 16%;
+        }
+    }
+    &.active {
+        @include respond-to(tablet) {
+            top: -34%;
+            width: 7.032%;
+            height: 18.312%;
+            transition: width 1s, height 1s, top 0.3s;
+            z-index: $level6;
+        }
+    }
+    @include respond-to(tablet) {
+        top: 15px;
+        left: 15px;
+    }
+    @include respond-to(desktop) {
+        top: 20px;
+        left: 20px;
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+        #luces1 {
+            transition: all $time;
+            animation: luces1 2s infinite;
+            position: relative;
+            z-index: $level1;
+        }
+        #luces2 {
+            transition: all $time;
+            animation: luces2 2s infinite;
+            position: relative;
+            z-index: $level2;
+        }
+    }
+}
+@keyframes logo {
+    0% { 
+        top: 16%; 
+    }
+    25% { 
+        top: -30%;
+        left: 50%;
+    }
+    50% {
+        top: -30%;
+        left: 0
+            20px;
+    }
+    100% { 
+        left: 20px; 
+    }
+}
+@keyframes luces1 {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes luces2 {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+.pace {
+    pointer-events: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    transform: translate3d(0, -50px, 0);
+    transition: transform .5s ease-out;
+    background: rgba(white, .5);
+    height: 10px;
+}
+.pace.pace-active {
+    transform: translate3d(0, 0, 0);
+    height: 10px;
+}
+.pace .pace-progress {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    top:0;
+    right: 100%;
+    width: 100%;
+    height: 10px;
+    background: white;
+    pointer-events: none;
+}
+audio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}

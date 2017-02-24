@@ -1,0 +1,72 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $level5;
+    color: white;
+    // .ganadores & {
+    //     position: relative;
+    //     bottom: auto;
+    //     left: auto;
+    // }
+    @include respond-to(tablet) {
+        padding: 0 20px;
+    }
+    @include respond-to(desktop) {
+        padding: 20px;
+    }
+    .content--show & {
+        z-index: $level6;
+    }
+}
+.column__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+    @media (max-width: 740px) and (orientation: portrait) {
+        width: 180px;
+    }
+    @include respond-to(tablet) {
+        padding-right: 0;
+    }
+    a {
+        color: white;
+        display: block;
+        @include font-size(12px, 20px);
+        @media (max-width: 740px) and (orientation: portrait) {
+            @include font-size(12px, 13px);
+            text-align: center;
+        }
+        @include respond-to(tablet) {
+            @include font-size(14px, 20px);
+        }
+    }
+    span {
+        margin: 0 10px;
+        display: block;
+        padding: 0;
+        width: 1px;
+        height: 24px;
+        background: white;
+    }
+    svg {
+        fill: white;
+        width: 16px;
+        height: 16px;
+        .no-touch & {
+            transition: all $time;
+            opacity: .5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
